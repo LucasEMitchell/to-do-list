@@ -3,16 +3,23 @@
 function addListItem() {
   let itemText = document.getElementById("textEntry").value;
 
-  let listItem = document.createElement("p");
+  let listItem = document.createElement("li");
   listItem.innerText = itemText;
 
   document.getElementById("listBox").appendChild(listItem);
 
   document.getElementById("textEntry").value = "";
-  
-  li.addEventListener('click', function() {
-    this.parentNode.removeChild(this);
-  }
+
+  let deleteButton = document.createElement("button");
+
+  deleteButton.addEventListener("click", function () {
+    listItem.remove();
+  });
+  deleteButton.innerHTML = "Delete";
+
+  //li.addEventListener('click', function() {
+  //this.parentNode.removeChild(this);
+  //});
 }
 
 //function addItem() {
